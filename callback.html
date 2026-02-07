@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Tesla Authorisation Complete</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --bg: #0b0b0b;
+      --fg: #e6e6e6;
+      --muted: #9aa0a6;
+      --accent: #e82127; /* Tesla red */
+      --card: #141414;
+    }
+    html, body {
+      margin: 0;
+      height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    }
+    .wrap {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+    .card {
+      max-width: 520px;
+      width: 100%;
+      background: var(--card);
+      border-radius: 14px;
+      padding: 28px 28px 32px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    h1 {
+      margin: 0 0 8px;
+      font-size: 1.4rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    .status {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 16px;
+    }
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 6px rgba(232,33,39,0.15);
+    }
+    p {
+      margin: 0 0 12px;
+      line-height: 1.5;
+      color: var(--muted);
+    }
+    code {
+      display: block;
+      margin-top: 12px;
+      padding: 12px 14px;
+      background: #0f0f0f;
+      border-radius: 10px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.85rem;
+      color: #cfd8dc;
+      overflow-x: auto;
+    }
+    .footer {
+      margin-top: 18px;
+      font-size: 0.8rem;
+      color: #7a7f85;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <div class="status">
+        <span class="dot"></span>
+        <h1>Authorisation complete</h1>
+      </div>
+
+      <p>
+        Tesla OAuth has successfully redirected back to this application.
+        You can safely close this tab.
+      </p>
+
+      <p>
+        If you’re running this in a terminal workflow, copy the full URL
+        from the address bar and paste it back into your script.
+      </p>
+
+      <code>
+        callback.html?code=…&amp;state=…
+      </code>
+
+      <div class="footer">
+        This page exists solely to satisfy Tesla Fleet API redirect requirements.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
